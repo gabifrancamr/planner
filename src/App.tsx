@@ -51,6 +51,11 @@ export function App() {
     event.currentTarget.reset();
   }
 
+  function removeEmailFromInvites(emailToRemove: string) {
+    const newEmailList = emailsToInvite.filter((eachEmail) => eachEmail !== emailToRemove)
+    setEmailsToInvite(newEmailList)
+  }
+
   return (
     <div className="h-screen flex justify-center items-center bg-pattern bg-no-repeat bg-center">
       <div className="max-w-3xl w-full px-6 text-center space-y-10">
@@ -163,7 +168,7 @@ export function App() {
                   key={email}
                 >
                   <span className="text-zinc-300">{email}</span>
-                  <button type="button">
+                  <button onClick={() => removeEmailFromInvites(email)} type="button">
                     <X className="size-4 text-zinc-400" />
                   </button>
                 </div>
