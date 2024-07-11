@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 * {
-    min-width: 0;
+  min-width: 0;
 }
 
-body {
-    color-scheme: dark;
+input {
+  color-scheme: dark;
+}
+
+:root {
+  --rdp-accent-color: #BEF264;
+  --rdp-accent-color-dark: #BEF264;
 }
